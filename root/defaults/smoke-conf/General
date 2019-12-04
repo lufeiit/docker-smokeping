@@ -7,6 +7,7 @@ mailhost = my.mail.host
 # since all files under cgi-bin will be executed ... this is not
 # good for images.
 cgiurl   = http://localhost/smokeping.cgi
+display_name = XXX
 # specify this to get syslog logging
 syslogfacility = local0
 # each probe is now run in its own process
