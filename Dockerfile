@@ -40,9 +40,11 @@ RUN \
 # add local files
 COPY root/ /
 COPY ./entrypoint.sh /entrypoint.sh
+COPY ./start.sh /start.sh
 
 # ports and volumes
 EXPOSE 80
 VOLUME /config /data /etc/smokeping
 
 ENTRYPOINT [ "/bin/sh","/entrypoint.sh" ]
+CMD ["/bin/sh","/start.sh"]
