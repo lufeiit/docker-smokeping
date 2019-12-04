@@ -43,6 +43,6 @@ COPY ./entrypoint.sh /entrypoint.sh
 
 # ports and volumes
 EXPOSE 80
-VOLUME /config /data
+VOLUME /config /data /etc/smokeping
 
 ENTRYPOINT [ "/bin/sh","/entrypoint.sh" ]
