@@ -11,6 +11,7 @@ LABEL maintainer="ironicbadger,sparklyballs"
 COPY tcpping /defaults/
 
 RUN \
+ echo @edge http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
  echo "**** install packages ****" && \
  apk add --no-cache \
 	apache2 \
@@ -24,6 +25,7 @@ RUN \
 	ssmtp \
 	sudo \
 	tcptraceroute \
+	wqy-zenhei --update-cache --repository http://nl.alpinelinux.org/alpine/edge/testing --allow-untrusted \
 	ttf-dejavu && \
  echo "**** give setuid access to traceroute & tcptraceroute ****" && \
  chmod a+s /usr/bin/traceroute && \
@@ -37,7 +39,12 @@ RUN \
 
 # add local files
 COPY root/ /
+COPY ./entrypoint.sh /entrypoint.sh
+COPY ./start.sh /start.sh
 
 # ports and volumes
 EXPOSE 80
 VOLUME /config /data
+
+ENTRYPOINT [ "/bin/sh","/entrypoint.sh" ]
+CMD ["/bin/sh","/start.sh"]
