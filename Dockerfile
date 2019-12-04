@@ -11,8 +11,8 @@ LABEL maintainer="ironicbadger,sparklyballs"
 COPY tcpping /defaults/
 
 RUN \
- echo @edge http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories \
  echo "**** install packages ****" && \
+ echo @edge http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
  apk add --no-cache \
 	apache2 \
 	apache2-ctl \
