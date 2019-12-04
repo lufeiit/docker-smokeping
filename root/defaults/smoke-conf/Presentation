@@ -5,34 +5,34 @@ charset  = utf-8
 
 + charts
 
-menu = Charts
-title = The most interesting destinations
+menu = 排行榜
+title = 排行榜
 
 ++ stddev
 sorter = StdDev(entries=>4)
-title = Top Standard Deviation
-menu = Std Deviation
+title = 最大抖动
+menu = 抖动
 format = Standard Deviation %f
 
 ++ max
 sorter = Max(entries=>5)
-title = Top Max Roundtrip Time
-menu = by Max
+title = 最大延时
+menu = 延时
 format = Max Roundtrip Time %f seconds
 
 ++ loss
 sorter = Loss(entries=>5)
-title = Top Packet Loss
-menu = Loss
+title = 最高丢包率
+menu = 丢包率
 format = Packets Lost %f
 
 ++ median
 sorter = Median(entries=>5)
-title = Top Median Roundtrip Time
-menu = by Median
+title = 最大平均延时
+menu = 平均
 format = Median RTT %f seconds
 
-+ overview
++ overview 
 
 width = 600
 height = 50
@@ -44,10 +44,10 @@ width = 600
 height = 200
 unison_tolerance = 2
 
-"Last 3 Hours"    3h
-"Last 30 Hours"   30h
-"Last 10 Days"    10d
-"Last 360 Days"   360d
+"最近3小时"    3h
+"最近一天"   24h
+"最近一个月"    31d
+"最近一年"   365d
 
 #+ hierarchies
 #++ owner
